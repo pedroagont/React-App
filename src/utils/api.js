@@ -99,7 +99,6 @@ class Api {
   }
 
   changeLikeCardStatus(cardID, like) {
-    console.log(cardID, like);
     return fetch(`${this._address}/${this._groupId}/cards/like/${cardID}`, {
       method: like ? 'PUT' : 'DELETE',
       headers: {

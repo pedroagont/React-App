@@ -164,6 +164,8 @@ function App() {
     });
   }
   function onSignOut() {
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("email");
     setIsLoggedIn(false);
     history.push("/signin");
   }

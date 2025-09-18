@@ -39,7 +39,8 @@ class Api {
       }),
     })
       .then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
-      .catch(err => console.log(`Adding a card: ${err}`));
+      .catch(err => console.log(`Adding a card: ${err}`))
+      .finally(() => renderLoading(false));
   }
 
   removeCard(cardID) {
@@ -78,7 +79,8 @@ class Api {
       }),
     })
       .then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
-      .catch(err => console.log(`Updating user info: ${err}`));
+      .catch(err => console.log(`Updating user info: ${err}`))
+      .finally(() => renderLoading(false));
   }
 
   setUserAvatar({ avatar }) {
@@ -95,7 +97,8 @@ class Api {
       }),
     })
       .then(res => res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
-      .catch(err => console.log(`Updating user pic: ${err}`));
+      .catch(err => console.log(`Updating user pic: ${err}`))
+      .finally(() => renderLoading(false));
   }
 
   changeLikeCardStatus(cardID, like) {
